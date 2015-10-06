@@ -1,0 +1,115 @@
+download ml
+from
+www.polyml.org
+www.smlnj.org
+
+5+2;
+val it=7: int
+
+f;
+val it = (value of f) : type of f
+// make a new variable
+
+==============================================================
+function:
+
+fun f x= x+1
+==
+val f=fn x=> x+1
+fn is like lambda in ml
+
+
+fn x=> x+1
+val it =fn: int->int
+
+
+=====================================================
+list
+[1,2,3]
+val it=[1,2,3]: int list
+
+* could not have mixed type of list
+
+append a element at the beginning of list
+value:: list_name;
+like cons
+
+but list_name are still the old one
+*lists are immutable
+
+======================================================================
+triple types
+("a",1,1.0)
+val it=("a",1,1.0): string* int * real
+
+
+difference of () with []
+()=("a",1,1.0)
+error
+* each triple is a unique type
+
+==========================================
+datatype
+
+datatype color= Red| Blue| Grean;
+like enum in c
+
+datatype myList= empty | cons of int * myList;
+
+cons makeup a new type
+
+
+
+empty;
+cons(3, empty);
+cons(4, it);
+
+
+datatype intOption=Noint | SomeInt of int
+
+===========================================================
+records
+
+{y=3, z=4}
+like struct in c
+
+#y myrec;
+#z myrec;
+
+
+==============================================================
+generic: option
+
+SOME 3
+val it = SOME 3: int option 
+
+NONE;
+
+[]: a list
+::  a* a list -> a list
+
+
+
+
+
+
+
+
+
+
+
+
+
+like a list
+
+
+
+
+
+
+
+
+
+
+
+ 

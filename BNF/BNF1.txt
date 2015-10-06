@@ -1,0 +1,81 @@
+BNF
+Backus-Naur Form
+<a> non terminals
+<b>
+<stmt>
+
+c		terminals
+;
+123
+
+
+rewrite rule
+
+<a> -> a <b> c    nonterminal on the left
+<a> -> c	  arrow
+		  string of terminals/ nonterminals
+
+<a>	special non terminal call the "start symbol"
+
+<a> -> a <b> c
+<b> -> b <b>
+<b> -> b
+
+terminals   ={a, b, c}
+nonterminals={<a> <b>}
+start symbol=<a>
+
+
+
+the set of trings generateed by following this rewrite 
+rules language grammer
+
+<a> => a <b> c =>	1. rewrite start symbol
+a b <b> c =>		2. go to next rewrite
+a b b c
+
+or
+
+<a> =>
+
+
+
+[x] x is optional
+x*  x is repeated 0 or more time
+x+  x is repeated 1 or more time
+e, lambda, E	empty string
+
+
+
+<b>-> b <b>   	<b>-> b+ => at least b then as many as your want
+<b>-> b
+
+
+
+
+<if-stmt>-> if <predicate> then <stmt>
+<if-stmt>-> if <predicate> then <stmt> else <stmt>
+	 |  if ...    
+
+<if-stmt>-> if <predicate> then <stmt> [else <stmt>]
+
+
+e.g
+list of statement seperated by ; one or more <stmt>
+<stmt-list> -> <stmt>
+	     | <stmt>; <stmt-list> 
+
+	no ; at the end
+
+<stmt-list> -> <stmt>;
+	   |   <stmt>; <stmt-list>
+
+
+
+ 
+
+
+
+
+
+

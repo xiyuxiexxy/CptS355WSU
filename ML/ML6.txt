@@ -1,0 +1,111 @@
+type unsafety in c
+
+double f
+int *p= (int*) &f
+*p =4
+
+int *p= malloc ( sizeof (int))
+free (p);
+float *f =malloc (sizeof (float))
+*f=4.0
+*p=3	//tangling pointer
+
+
+typedef u= union {
+int i;
+float f;
+}
+
+
+u bad;
+bad.i=3;
+...bad.f	// f has a unwanted value
+
+u:
+f,i float and int
+share storage
+
+static or dynamic type checking
+compile / runtime 
+
+
+dynamic: python
+static: ml
+
+
+dynamic 
+list of mixed element
+
+static
+find the error before ship the code
+============================================
+how does type analysis work
+
+type variable:	// c doesn't have
+
+fun f x = x+1
+type of f = 'a 
+	  ='b->'c
+
+'c=?
+
+type of (+) = (int *int )-> int
+
+           x=b=int	 'c=int
+
+thus
+type of (f) = int->int
+
+
+fun f (x,y) =(x (y 2))
+
+t(f) = 'a -> 'b
+'a = 'c * 'd 	// a tuple
+
+t(y)= 'd= 'e-> 'f 	//y is a function call
+'e =int
+
+t(x)='c='g-> 'h 
+'g='f			 //x is also a function call
+'b-> 'h
+
+
+val f = fn: ('a -> 'b) * (int -> 'a) -> 'b;
+
+
+'a-> 'b=  ('C *'D) ->'b
+=('g->'h)* (e->f) ->'b
+=('f->'b)* (int->'f) ->'b
+
+f is polymonial function
+
+use type analysis to obtain logic error
+
+fun reverse [] =[]
+|	reverse (x::xs) = reverse xs;
+
+
+// a function has only one type
+t(reverse) = 'a list  -> 'b list	// first line
+t(reverse) = 'a list  -> 'b list
+
+// we want 'a list-> 'a list
+
+
+fun reverse' []=[]
+| reverse' (x::xs) = x:: (reverse xs);
+	   'a	     'a
+t(reverse) = 'a list  -> 'b list	// first line
+t(reverse) = 'a list  -> 'b list
+'a =='b
+
+
+
+
+
+	
+
+
+
+
+

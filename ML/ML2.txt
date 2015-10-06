@@ -1,0 +1,119 @@
+list processing 
+
+argument pattern
+
+e.g 
+fun last [] = raise Empty
+  | last [x]= x
+  | last (_::r) =last r     //recursive
+
+* _ whatever
+  :: cons
+
+
+find the first element of a list that satisfy a predicate
+
+fun find pre [] = NONE
+|   find pre [h::rest]= 
+	if pre h then SOME h
+		else( find pred rest)
+
+? two argument
+
+
+* some .. type option
+
+fun test x=x=3
+
+find test [1,2,3]
+val it= SOME 3: int option
+
+find test [1,2,4]
+val it=NONE: int option
+
+
+
+reverse append : reverse its first argument
+and append its second tio the result
+
+fun reverseAppend ([],l)=l
+| reverseAppend (h::t,l)=reverse(t,h::l)
+
+
+rA([1,2,3],[4])=
+rA([2,3],[1,4])=
+rA([3],[2,1,4])=
+rA([],[3,2,1,4])=
+[3,2,1,4]
+
+
+argument is a single arguement of tuple
+'a list* 'a list-> 'a list
+
+
+partition
+predicate and a list
+return two lists one satisfy the other not
+
+
+fun partition pre l = let
+
+	fun loop ([],truelist, falselist)=
+		(truelist, falselist)
+	|   loop (h::t, truelist, falselist)=
+		if predication h then 
+			loop(t, h::truelist, falselist)
+		else 
+			loop(t, truelist, h::falselist)
+in 
+	loop(l, [],[])
+	//pre is not a argument for loop function
+	//scope 
+
+end 
+
+// answer will be reversed
+
+
+nth element 
+
+fun nth ([], _) = rase Empty
+ |  nth (h::t,0)= h
+ |  nth (h::t, n)= nth(t, n-1)
+
+Note: could not reverse the second and third line
+the third line always satisfy
+
+
+take the first n element form a list
+fun take (l, 0)=[]
+|   take ([],_)=rase Error
+|   take (h::t, n)=h::(take (t,n-1))
+
+// not tail recursion
+
+tail recursive take
+
+fun take2 (l,n) =let
+
+	fun loop (l, 0, a)=a // reversed 
+
+=> 	fun loop (l, 0, a)=reverse a
+
+
+	|   loop ([],_, a)=raise error
+	|   loop ( h::t, n, a)= loop (t, n-1, h::a)
+
+in
+	loop(l,n,[])	
+end
+
+
+
+
+
+
+
+
+
+

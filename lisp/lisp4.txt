@@ -1,0 +1,95 @@
+function in lisp 
+
+list
+
+(list 0 1 2 (+4 5))
+=>(0 1 2 9)
+
+'( 0 1 2 9 )
+
+quote is a special form, value are not evaluated
+e.g 
+'(0 1 2 (+4 5) )
+=> 
+'(0 1 2 (+4 5) )
+
+
+
+
+(define (multAll l)
+	(cond 
+		((null? l) 1)
+		(#t	(*(car l) (mull (cdr l) ) ) ) )
+	)
+)
+
+
+
+(define (foldr func base l)
+	(cond
+	( (null ? l ) base)
+	(#t (func (car l) (foldr func(cdr l))) )
+	)
+)
+
+
+
+(define (addall l)
+	( foldr + 0 l))
+
+
+(define (multAll l)
+	(foldr * 1 l)
+)	
+
+
+
+
+
+
+
+
+(define (concate  l)
+	(foldr 	myappend '() l)
+)
+
+
+(define ( foldl func base l)
+	(cond
+		((null ? l)	base)
+		(# (foldl func (func (car l) base) (cdr l)))
+		// tail recursive=> while turn into a loop by compilers code
+	)
+)
+
+
+
+(define (reverse l)
+	(cond
+	( (null ? l) l)
+	( #t (append (reverse (cdr l) ) (list (car l))))
+	)
+)
+
+
+//problem recursion happen n^2
+=> change it into loop
+
+(define (reverse l)
+	(reverse2 l '() )
+	 
+
+(define (reverse2 l a)
+	(cond
+		(	(null ? l)	a)
+		(#t	(reverse2 (cdr l) (cons (car l) a))))
+	)	
+)
+
+
+
+
+	
+
+
+		

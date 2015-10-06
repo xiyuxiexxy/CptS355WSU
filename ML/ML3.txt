@@ -1,0 +1,95 @@
+
+this process of writing multi-argument functintype 
+as s sequences of single argument function types is
+calles carring  
+
+or put all the argument into a tuple
+
+
+[1,2,3] int list
+[[1,2,3],[4,5,6]] (int list) list
+
+
+type notatfication for tuples
+
+type * type
+
+("a",3.0)
+string*real
+
+(#"a",3.0)
+char* real
+
+(3,4,5.0)
+e.g int * int* real
+
+
+type notation for functions
+type-> type
+
+function exists p [] =false
+# | exists p (x::xs)= if p x then true else (exists p xs);
+
+
+
+('a-> bool)-> a'list -> bool
+
+right associative
+
+fun eq3 x=x=3;
+ int -> bool
+
+contains = exist eq3
+
+it=fn: int list-> bool
+
+
+contains3 [1,2,3]
+true
+contains3 [4,5,6]
+false
+
+
+> fun exist2 (_,[])=false
+# | exist2 (p,(x::xs))= if p x then true else exist2 (p, xs);
+val exist2 = fn: ('a -> bool) * 'a list -> bool
+ 
+* has higher predecy
+( ('a -> bool) * 'a list ) -> bool
+
+
+
+e.g.
+
+type of all is 
+()
+
+
+fun all p 
+
+
+
+
+
+
+
+
+fun all p []= true
+| all p (x::xs)= if ( p x )  then all p xs else false ; 
+
+
+fun all p []= true
+# | all p (x::xs)= if  p x   then all p xs else false ; 
+val all = fn: ('a -> bool) -> 'a list -> bool
+
+
+
+fun all2 (p, [])= true
+| all2 (p, [x::xs])= if not (p x) then false else all2 (p,xs)
+
+('a -> bool)* list-> bool
+
+
+all eq3 [];
+val it = true: bool
+> 

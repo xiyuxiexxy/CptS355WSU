@@ -1,0 +1,97 @@
+call how postscript works for function call
+
+/fact {} def 
+
+... 
+4 fact
+...
+
+
+dict creates a new dictionary on the oprand stack 
+begin moves from the oprand stack to the dictionary stack
+end removes a dictionary of the dictionary stack
+
+nameloop up 
+
+looking first in topmost dictionary of the dictionary stack
+and then downward until the name was found
+
+
+..........................................................
+
+dynamic scoping: time sequence: most recently defined 
+
+dict stack
+top 
+[]
+[]
+[]
+[x]
+[]
+
+..........................................................
+static scoping: 
+
+look top, follow access link
+
+access links : where they point and how should they be implemented
+
+
+
+use integer to access random list element:
+
+access link should be integer values: 
+indices into the dictionary stack list
+
+
+[] [] [] [] [] [] 
+0		n<- top
+access link is the index in the list
+
+if top is 0
+1. make access link an offset from hte entry which it is shored
+2. make offset from then end of the stack
+	a negative integer relative to the end
+
+
+where are the access links stored: the dictionary stack
+
+dictionary stack element need to be pairs:
+	a dictionary and an integer access link
+
+suggestion:
+use the same data structure for both
+-s and -d behavior
+
+...........................................................
+where access link point:
+
+1. when to create an access link
+	when call a function
+
+the access link point to the dictionary in which you found the defination of the function that is being called
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,93 @@
+python 
+
+print(3)
+x_123=4
+x_123
+
+Nonetype
+None
+absence of a return value
+
+string
+''<==>""
+they have to match
+
+way to prevent ealy escape
+s3="Sam's cat"
+s4='Sam said "Hi"'
+'sam\'s cat said "hi"'
+
+
+'''
+multi line string
+'''
+(\n is in)
+
+v1=_ 
+print(v1)
+do not have \n
+
+
+"this contains \\"
+print(_)
+this contains \
+
+r string
+
+s='01234567890'
+s[0]-- '0'
+
+s[1:5]='1234'
+5 is not in the splice
+s[7:11]
+s[7:]
+s[:7]
+
+count from the end
+s[-1]
+s[-2]
+s[2:-2]
+
+
+len(s)
+
+'2' in s
+'23' in s
+'24' in s
+
+
+s[1::2]
+1: start position
+2: every second one
+
+s[::-1]
+reverse the string
+
+s[1:6:2]
+135
+s[5:0:-2]
+'531'
+
+
+list
+mutable
+
+[1,2,'a','b']
+
+[1,2,3,4,5,6,7,8,9,0]
+
+l[0]=11
+l[0:3]=[14]
+
+
+
+
+
+
+
+
+
+
+
+
+

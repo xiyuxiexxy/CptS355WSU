@@ -1,0 +1,13 @@
+1.
+if python function doesnot have a return value
+it returns none
+
+2.
+for x in l:
+	print(x)
+	(not print (l[x])
+
+x is the element in the list
+
+3.
+

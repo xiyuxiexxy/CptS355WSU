@@ -1,0 +1,108 @@
+2+(3*5)
+
+(+2 (* 3 5)) 
+
+(car '( 1 2 3 ))
+1 => the first element
+not '(1)
+
+(cdr '( 1 2 3))
+'(2 3)
+=> a list except the first element
+
+result of cdr is a list
+
+
+
+
+///////////////////////////////
+
+function for processing lists
+
+
+f( 1 2 3 )=> f( 2 3 4)
+
+using cond
+
+define (add1toAll l) 
+(
+
+(  (null? l) 	'()
+(   #t		
+	(cons (+1 (car l))
+	 	( add1toAll (cdr l))))	
+ 
+)
+
+cons	cdr
+[      ][-]->
+
+
+
+
+
+
+((1 2)(1 2)()()(3 4)(5))=>
+(#f    #f  #t #t #f  #f	)
+
+
+(define (emptyMember l)
+cond 
+((null ? l)   l)
+(#t		cons (null ?	( car l))
+			(emptyMember (cdr l)
+
+
+)
+
+
+
+(def (addtoAll L)
+    (cond
+      ((null? l) l)
+      (#t  (cons (+1 (car l))
+                 (addtoAll (cdr l))
+                 )
+           )
+      )
+    )
+
+(addtoAll '())
+
+
+(define (count l)
+(cond	
+((null ? l ) 0)
+(#t	(+1 (count (cdr l))
+
+
+addAll
+
+(define (addAll l)
+(null ) 0
+
+
+
+
+(def (addtoAll L)
+    (cond
+      ((null? l) l)
+      (#t  (cons (+1 (car l))
+                 (addtoAll (cdr l))
+                 )
+           )
+      )
+    )
+
+
+append two list
+( append '(1 2 3) '(4 5))
+cond
+(null? l1)	l2
+
+(#t	cons (car l1) append ((cdr l1)l2)  
+
+
+
+
+

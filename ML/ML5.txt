@@ -1,0 +1,19 @@
+type:
+ a collection of value that share a common set of operations
+
+
+python:
+run-time check
+
+if false
+ 17()
+else 
+3
+
+output 3
+
+
+ml
+
+if false then 17() else 3
+compile error

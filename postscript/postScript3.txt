@@ -1,0 +1,125 @@
+runtime data structure to interprate postscript
+:
+
+stack
+
+1. operand stack
+2. stack of dictionaries 
+3.
+
+
+e.g. 
+/fact {... fact ...} def
+
+specific feasure in python
+list and dictionaries
+
+python list
+
+1.L = []
+  L.append()
+  L.pop
+=> use as stack
+
+2. D1={'d':3}
+   D2={'e':5}
+	
+   DS={D1, D2}
+   DS.append({'f':6})
+   
+=>dictionary stack
+note:
+search from the back
+
+
+/g 17 def
+=>
+
+DS[-1]['g']=17
+=>
+DS= [{'d':},{'e'},{'g':,'f':6}]
+
+=> begin and end 
+dictionary stack, dictionary element
+
+
+write pseudocode for
+
+
+add
+
+List 
+
+
+
+ifelse
+
+
+
+
+
+def
+
+
+/name
+
+
+
+
+
+name
+
+print
+
+dict
+
+takes an integer operand from operand stack and put new dictionary on operand stack
+
+
+dict()
+   arg=opStack.pop()
+   newDict={}
+   opStack.append(newDict)
+ 
+begin
+
+begin():
+    arg=opStack.pop()
+    dictStack.append(arg)
+
+
+end
+   dictStack.pop()
+
+
+3 4 17 add mul
+
+
+for token input
+{
+if token='add'
+...
+elif token ='sub'
+...
+elif token=''
+....
+
+}
+=> write a dictionry from ifelse
+
+for token in input
+	operations[token]()
+
+
+operations={'add': add,// references to functions
+	    'sub': sub,
+	...
+	  }
+def add():
+	op1=opStack.pop()
+	op2=opStack.pop()
+	opStack.appand(op1+op2)
+
+Question: how to parsing the input
+
+

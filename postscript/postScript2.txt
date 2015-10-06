@@ -1,0 +1,153 @@
+postscript
+
+
+
+GS<1> (this is a value of type string)
+():string
+GS<2> stack
+
+GS<2> {1 2 add}
+GS<3>stack
+
+GS<3>clear
+
+varibles and dictionary
+
+
+/myVar 3 def
+-> dictionary 
+myVar| 3
+
+
+/myVar
+stack
+3
+stack
+def
+
+
+
+/p1{3 add }
+stack
+def
+
+p1
+error
+
+
+7
+p1
+
+stack
+->10
+excute code
+
+
+
+/v1 1 def
+/v2 2 def
+/v3 3 def
+stack
+
+
+
+factorial on a stack
+/fact{
+	/x exch def
+	0 x eq
+		{1}
+		{x 1 sub fact x mul}
+		ifelse
+}def
+
+
+
+
+
+e.g 1 fact
+1. /x 1
+2. exch the top two value of the stack
+	1 /x
+3.	def x=1
+4. 0 1 eq->false
+5.{x 1 sub fact x mul}
+  {1}
+  false
+// {} get pushed on the stack
+6.ifelse
+ take the last three things out
+7.1 1->sub
+
+8. 0 fact 
+9. 0 /x exch  // x in the original stack change into 0, as well
+10. /x 0
+11. 0 0 
+12. {1}
+    true
+13. 1 
+14 return 0 1
+15 mul 0 
+	
+ 
+problem /x overwrite in postscript
+in c x is local variable
+
+/////////////////////////////////
+solution:
+give a stack of dictionaries
+
+dict 		// take an interger operand from stack, and puts a new dictionary on the operand stack
+begin
+
+
+end
+
+
+
+
+
+
+
+e.g.
+1 dict
+
+create a operand stack
+=> -|_
+   -|_
+2. begin operation
+	take the top element of operand stack and move it into dictionary stack, 
+	must be a dictionarty
+	
+		dictionary stack  // multiple entrances
+		-|_
+		-|_
+		system stack
+		add|_
+		mul|_
+
+3. /x 3 def
+	
+	dictionary stack
+		x|3
+		-|_
+		system stack
+		add|_
+		mul|_
+4. x * mul
+	3 3 mul -> 9
+
+	look for a name from the top of the dictionary stack
+5. end
+removes top element of the dictionary stack
+
+
+
+
+	
+
+
+	
+
+
+
+

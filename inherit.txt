@@ -1,0 +1,92 @@
+homework
+
+System.out.print(<string>)
+System.out.println
+input
+DataInputStream in= new DataInputStream (System.in)
+String line= in.readLine()
+
+IOException 
+IO-ish operations
+try
+{
+	IO- doing sty
+}
+catch (IOException e )
+{
+	whatever
+}
+
+
+c++ object
+
+contains
+data
+methods
+
+create a new object say new
+
+1. memory allocation
+
+Q: how much memory? need for method code?
+
+for non-virual nethods we don't need per object information about where the code is
+that is implicit in the class information about the object
+
+
+
+virual method
+can be over-ridden
+in an inheriting class
+
+
+do we have to have a point to each virtual methods?
+no, same class has same set of virtual methods
+
+A object
+1 pointer  -> vtable for the class
+data		m1			-> code for m1
+		m2			->
+
+
+when B inherits from A
+
+B object
+
+1 pointer -> B's vtable  
+A data   <- exactly like a for position of each .a (correct offset from the beginning the object)
+B data
+
+
+B's vtable
+copy of A vtable <- if B overrides A's methods, its replaces in A part of B's vtable
+B-vtable addtion
+
+
+problem for multiple inheritant
+
+
+note:
+1. non virtual methods are not the vtable
+2. pure virtual methods: always in vtable
+3. abstract class is a class with at least one pure virtual methods
+4. destructor: virtual destructor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

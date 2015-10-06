@@ -1,0 +1,22 @@
+fun count x l= let 
+
+
+fun length [] = 0
+ |  length (x::xs) = 1+ (length xs)
+
+val trueList = let
+
+		fun filter _ [] = []
+		 |  filter f (x::xs) =
+	
+ 			if (f x) then x:: (filter f xs)
+ 			else (filter f xs)
+
+		fun egx y = (x=y)
+
+
+	in   filter egx l
+	end
+	
+in length trueList
+end

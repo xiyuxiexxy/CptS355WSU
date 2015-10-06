@@ -1,0 +1,74 @@
+nested for loop
+
+a=[0, 1]
+b=[1, 0]
+
+res=[[x, y] for x in a for y in b]
+
+which order the loop is nested in?
+the right most is the inner loop
+
+[[0, 1], [0, 0], [1, 1], [1, 0]]
+
+
+
+a = [0, 1]
+b = [1, 0]
+res = [[(x,y) for x in a] for y in b]
+
+[ [ (0, 1), (1,0)], [ (0,0),(1,0)   ] ]
+
+
+
+////////////////////////////////////////////
+modules
+
+1. import modulename 
+sys.path
+
+sys.path=['.']+sys.path
+
+
+2. from module import name
+3. from module import *
+	* anything
+
+
+
+help()
+dir()
+
+
+///////////////////////////
+dictionary
+hash table- random order
+
+
+{'a':1, 'b':2, 'c':3}
+d.keys
+for k in ks : print (k)
+kl= list(ks)
+
+d.values()
+iS= d.items()
+d.len()
+
+
+
+//////////////////////////////////
+string formatting
+'For key k in the dictionary , the value is v'
+
+pattern ='For key %s inn the dictionary, the value is %d'
+for i in iS 
+	print (pattern % i)
+
+for i in d
+	print (pattern %i)
+just print keys
+
+
+
+files
+
+chmod +x myscript.py

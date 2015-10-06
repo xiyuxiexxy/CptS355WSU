@@ -1,0 +1,13 @@
+#!/usr/bin/python3
+
+def fact(x):
+	if x==0 :
+		return
+	else:
+		return x* fact(x-1)	
+
+
+python demo.py
+ln -s demp.py demo
+ch
+

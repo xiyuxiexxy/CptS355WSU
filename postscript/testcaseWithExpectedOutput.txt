@@ -1,0 +1,94 @@
+1 =
+%1
+
+123
+true
+/fact
+/f false def
+f
+(\n)
+stack
+%false
+%fact
+%true
+%123
+
+clear
+2 -3 add
+7 2 sub
+2 3 mul
+12 4 div
+(\n)
+stack
+%3.0
+%6
+%5
+%-1
+
+clear
+0 1 eq
+2 3 lt
+-1 0 gt
+7 3 gt 0 -1 lt and
+/x 0 def
+x 0 eq x -1 lt or
+true not
+(\n)
+stack
+%false
+%true
+%false
+%false
+%true
+%false
+
+clear
+x 0 eq {/ok} if
+x 1 eq
+    {3}
+    {4}
+ifelse
+(\n)
+stack
+%4
+%ok
+
+clear
+1
+2
+3
+exch
+dup
+pop
+(\n)
+stack
+%2
+%3
+%1
+
+clear
+3 dict begin
+/x 1 def
+/y 2 def
+/z 3 def
+1 dict begin
+/t true def
+x
+y
+z
+t
+(\n)
+stack
+%true
+%3
+%2
+%1
+
+clear
+end
+y
+(\n)
+stack
+%2
+
+t %Error: undefined in t

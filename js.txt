@@ -1,0 +1,74 @@
+Javascript
+
+object- oritented
+
+element of the html decument are treated as an dividual object
+
+
+document object model
+each <p> <body> <li ><>
+even domain to chance level is an object that JS manipulate
+
+O-O:
+
+JS has functions as first class value: 
+function as a value:
+pass as parameter
+store as variable
+return them from function
+
+Javascript allows nested function defination with static scoping rules 
+
+in place function def: lamda, fn in ml, python
+
+
+function checklog(){
+
+// postJWON send request to the server
+
+$.postJWON ("/checklog", {}, function(o)  {
+if o.result == "timeout" {checklog();}// recursive call checklog
+					// always send request to server
+					//while loop
+else {
+	style to updat ehte paml vases on server rely 
+	checklog();			// call checklog immediately
+     }
+  });	//function(o), no name needed, an argument to checklog
+}	// call whne the server replies
+
+
+
+static scoping
+
+function checkStack (sercverRequest, holes, versions)
+{
+	$.postJSON ("/"+serverRequest, {version:...version...},// version: dictionary like
+	function(o)	// callback function when server responds
+	{
+		if (o==null ) return;
+		if (o.result =="timeout"
+		 {chekcStacks (reversRequest, holes,versions);}// nonlocal reference of the parameter passed in the first time
+		else
+		{	
+			holes.map (function (hole) // holes is map array, map is map function, do function to each of the holes
+			{
+				if (o[hole] 
+				{replace still on page}
+			});
+			checkStacks( serverRequest, hole, o.versions);// version from the server responds,not the globl one
+		});
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+

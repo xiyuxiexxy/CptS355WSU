@@ -1,0 +1,135 @@
+fun len [] =0
+| 	len (x::xs)=1+(len xs)
+
+change to tail recursion
+
+use an cumulator function
+
+fun len2 [] a =a 
+|   len2 (x::xs) a= len  xs (a+1)
+
+problem: function takes one parameter
+define another function
+
+fun len l =len2 l 0
+
+problem: hide len2 
+
+fun len l = let
+fun len2 [] a =a
+|   len2 (x::xs) = len2 xs (a+1)
+in len2 l
+end 
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++
+
+count # of x's in l
+
+fun count x l =let 
+ fun egx y = (x=y) 	// egx takes one parameter
+in 
+  len (List.filler egx l)
+end
+
+// filler?
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++
+why static scoping matter?
+
+List.filler
+
+fun filler _ [] =[]
+|   filler f (x::xs) =if (f x) 
+			then x :: ( filler f xs) 
+			else (filler f x s)
+
+
+what if dynamic scoping
+
+      x  l
+count 1 [1 2 3]
+
+let  fun egx y=(x=y)
+length( List.filler egx [1,2,3]) 
+
+		if (egx 1)
+		then 1::(filler egx [2,3])
+		else 			
+
+// if dynamic scoping y changes with x
+
++=======================================================
+how thne are these binding and scoping rules inplements
+val x =3;
+val y =5
+val x =7
+
+each time of declaration create a new block 
+
+fun f  x = x+3
+
+x=3
+|
+y=5
+|
+x=7 <- top of the stack
+|
+f: fn x=> x+3  <- top of the stack
+
+when function add a block binding element and parameters
+e.g when call
+f 4
+
+x=3
+|
+y=5
+|
+x=7 <- top of the stack
+|
+f: fn x=> x+3  <- top of the stack
+|
+x=4		<- activation records
+
+
+====================================================
+
+fun count x l = let
+    fun egx y = (x=y)
+in  length (list.filler egx l)
+end
+
+count 2 [1,2,3]
+
+
+count: fn x l => let ... in  length (...) end
+|
+x 2
+l [1,2,3]     <- block bind parameters  <- run function count<- encounter function
+|	       <- declaration egx
+egx: fn y=> x=y<- run length function  // filler funtion
+|		<-encounter parameter binding f and l
+f : egx<-bind to its block
+l:  l	<-bind to its block
+|	<-run function list.filler	
+x: 1    <- binding parameter x (for function egx)  
+
+============================
+to implement static scoping we also need  
+"access link " and "static link"
+
+fun filler _ [] =[]
+|   filler f (x::xs) =if (f x) 	 	             << x=1<< call  egx << y=1
+			then x :: ( filler f xs) 
+			else (filler f x s)
+
+
+now when i need the value of x I start 
+following access link and find the x where it defined
+
+
+

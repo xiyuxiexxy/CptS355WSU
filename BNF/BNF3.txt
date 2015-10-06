@@ -1,0 +1,112 @@
+		<t>
+	<t>	 +	<f>
+     <t>+ <f>	 ^	 x
+     x      y
+
+read intraverse x+y +x
+
+means (x+y)+x left associative
+
+
+more general short-cut
+<t> -> <t> + <f>
+     | <f>
+
+<f> -> X | Y
+
+left recursive
+
+
+grammer for arithmetic operation
+<expr >-> <expr> - <expr>
+	---------------------		
+	| <term>
+
+<term>->  <term> *<term>
+	| <var>
+<var>->  x|y|3|4|5
+
+4*5-3
+17		<expr> 			
+		/  |  \
+20	    <expr> - <expr>		3
+	   /            \
+20	<term>		<term>		3
+	  /		    \
+20	<term>*<term>	     <var>	3
+	  /	  \             \
+4 5	<var>      <var>	 3
+      	/	    \	
+       4	      5
+
+* the deepest leaf take the operation the first
+* the first expression note the operation of last
+
+
+
+4-5-3
+
+<expr>
+<expr>	-	<expr>
+<expr>-<expr>		<term>
+<term>	<term>		<var>
+<var>	<var>		3
+4	5
+
+
+<expr>
+<expr>-<expr>	4-(5-3)
+<term>	<expr>-<expr>
+<var>	<term> <term>
+4	<var>   <var>
+	5	3
+
+ambigous: form some strings there are two or more derivation trees
+
+Un-ambiguous grammer
+<expr>-> <expr>-<term>
+	| <term>
+<term>-> <factn>* <term>
+	| <factn>
+<factn>-> 3|4|5|x|y
+
+
+farest way from the start give the predency
+e.g
+<factn>-> 3|4|5|x|y|(<expr>)
+<addop>-> +|-
+<mul>  -> *|/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

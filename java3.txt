@@ -1,0 +1,26 @@
+java program
+
+static method not associated with any instant of a object
+
+
+pulic static void main( String[] args)
+	planet pluto
+	Roket roket  = ( , pluto)
+
+
+
+ ^
+ |	engine
+
+ |	gravity
+ \/
+
+
+
+applet<- html
+
+
+mouse-handling
+
+	
+

@@ -1,0 +1,110 @@
+1. tab charactors in python
+
+2. [2,4,6,8] [2:3]
+ans
+	[6]
+	slice is a list
+
+////////////
+data structure in python
+
+1. dictionary 
+   key<==>value
+
+{'aKey': 'aValue', 'antherKey': 6, 'aThirdKey':{'aNestedKey':'aNestedValue'}}
+
+d1=_
+
+_ the value of previous input
+
+d1['aKey']
+d1.get('aKey')
+
+d1.get('notAkey')
+return a none
+
+d1['notAkey']
+return error
+
+d1.get('notAKey','theDefaultValue')
+usage:
+ count occurrences of characters in a string
+
+e.g
+
+s='this is a string'
+d={}
+
+for c in s: (look every characters in the string)
+
+	d[c]=d[c]+1
+	// problem: first encounter a character will be an error
+
+	d[c]=d.get(c, 0)+1
+
+
+///////////////////////////////////
+function
+
+def countChars(s):
+	d={}   // local variable, not influence d outside this function
+	for c in s:
+		d[c]=d.get(c, 0)+1
+	return d
+
+countChars("A string of chars to count")
+
+def globalVarUse():
+	return s
+def localVarUse():
+	s="this is a local string"
+	return s
+
+localVarUse()
+"this is a local string"
+s 
+"this is a string of characters"
+
+global read not write
+
+
+
+//////////////////////////
+
+if True:
+	print (True)
+elif False:
+	print (False)
+else:
+	print (True)
+
+
+////////////////
+
+while 	x<10:
+	print(x)
+	x+=1
+
+
+//////////////
+range()
+
+for x in range(0,10):
+	print(x)
+
+//////////////
+
+list comprehesions
+
+[x*x for x in range (0,10)]
+
+
+[x*x for x in range(0, 10 ) if x%2==0 ]
+
+[(x,y) for x in range(0, 10) for y in range (0, 10)]
+	immutable duables
+
+
+///////////////
+
+

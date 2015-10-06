@@ -1,0 +1,185 @@
+VM
+
+
+1.compile once
+2.safty check
+3.code can be smaller
+
+4.dynamic module loading
+
+
+
+why not byte code?
+
+byte code Vs machine code
+
+time cost of execution
+Just in time compilation
+start to execute a method, invoke a byte code to machine code compiler
+
+
+java code     foo.java bar.class		 
+   |		/       /
+java compiler
+   |
+.class   -> a class file, foo.class
+   |
+
+   |
+foo.class   bar.class   .jar
+   |		/	/
+  java   -> execute the foo.java program
+
+
+
+
+for c 
+
+foo.c
+ |
+c compiler
+ |
+.o	.o  .so .a		//so shared 
+ |	/    /   /
+linker
+ |
+a.out
+ |
+
+ |
+a.out
+ |
+loader  -> run on the native machine
+
+
+for python
+also VM strategy:
+differ from java:
+use byte codes, no attempt in made to compiled files be partable on safe
+
+foo.py
+ |
+python  -> foo.pyc		// not compile foo.py again
+	<-
+
+	.exe . out is package with .pyc and python (interapter)
+
+only an optimation
+
+
+
+Java Vs C++
+
+1. no struct -> class // classes are not required to have methods
+2. no functions -> class static methods
+			// static: live in a class, not assoicated with any class instances (object)
+			// refer to it by class name not object name
+3. function pointers -> use object reference to pass it
+			 // anaymous objects //like function inline
+4. mutiple inheritance  // mutiple ancestors
+
+class A 	class B
+|		|
+	class C
+
+java doesn't have mutiple inheritance-> 
+
+has interfaces: just lists of methods and their types 
+
+a java class can inherit from one other class 
+and implement mutiple interfaces 
+-> delication
+
+
+5.no operator overloading -> can overload methods
+   +, -, symbols, =, 
+
+
+6. pointers in general 
+	in c, c++ you can form a pointer to any kind of value
+	in Java,  we use references to objects and aways, nothing else
+
+7. "non- dynamic object"
+	in c++ you can have object on the stack and static objects:
+	Java doesn't have
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

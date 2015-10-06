@@ -1,0 +1,7 @@
+static scope:
+	the environment that is extended (and becomes current) when a procedure is callled 
+is the environment in which the procedure was created (i.e. in which the procedure's defining lambda expression was evaluated),
+not the environment in which the procedure is called.
+
+
+

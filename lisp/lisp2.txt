@@ -1,0 +1,138 @@
+postscript
+
+opStack=[123,['{', '\x', 'exch', 'def', '}'], {}]
+
+1 dict
+{\x exch def}
+123
+
+opStack[0:0]=[456]
+
+opStack= 456, 123 ....
+
+
+check the type
+type(345)
+
+
+type ([]) is list
+
+
+
+
+
+lisp/scheme
+
+function evaluation
+(function op1 op2...)
+strict evaluaton: evalute each op, and then operation on them
+
+
+special forms: don't follow this rule
+
+1. (define x (+ 1 2)) 
+
+	don't evaluation x
+
+2. ( if boolean 
+	true-expr
+	false-expr) 
+
+e.g.( if (eq? 3 4 )  (+ 1 2) (+ 5 6))
+
+if in lisp is an expression, it has a value
+=> like
+	 bool ? true-value: false-value 
+   in c
+
+3. cond special form
+
+( cond
+	(test1 result1)
+	(test2 result2)
+	(test3 result3)
+	...
+	(testn resultn)
+)
+
+testn expression with boolean 
+if testi if true, evaluate resulti, it become result
+else, go to next line
+
+
+functions:
+
+(define x 3)
+
+(define (myfun x y)(+ x y))
+// x, y local variable
+
+
+///////////////////////////////
+
+lambda expressions
+( ( lambda (x y) (+x y)) 3 4)
+=> this function doesn't have a name
+
+
+(define  myfun  ( lambda (x y) (+x y)) )
+myfun
+#procedue: myfun
+(myfun 6 8)
+
+
+===============================================
+lists 
+
+(define mylist (1 2 3))
+wrong
+(define mylist (quote (1 2 3)))
+(define mylist '(1 2 3))
+
+
+empty list '()
+(null? '(1 2 3))
+(null? '())
+
+(car '(1 2 3))
+first element of a list
+
+(cdr '( 1 2 3))
+return a list of everything except the car
+
+
+
+
+(cdr '(1))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

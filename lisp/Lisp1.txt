@@ -1,0 +1,17 @@
+Lisp - chapter 3
+
+list and symbol processing language
+
+family of languges of functional programming languages.
+Algol -> imperative languages-> c, java
+Fortron
+
+
+imperative: do every steps
+
+functional no much variables, give immediately value back
+
+get 
+Scheme and racket
+
+

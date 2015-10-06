@@ -1,0 +1,30 @@
+<stmt-list> -> <stmt>;<stmt-list>
+	|      <stmt>
+    <stmt>  ->  x
+
+
+non-terminal :{<stmt-list>,<stmt>}
+terminal     : {x,;}
+
+
+<stmt-list> => <stmt>;<stmt-list>	chose op1
+	    => x;<stmt-list>		
+	    => x;<stmt><stmt-list>	chose op1
+	    => x;x;<stmt>		chose op2
+	    => x;x;x
+
+
+
+
+
+derivetion tree
+
+		<stmt-list>
+		/     |	   \
+	   <stmt>    ;     <stmt-list>
+	    /            /     |	\
+	  x	      <stmt>    ;     <stmt-list>
+		       /              	   \
+		     x            	  <stmt>
+					    \
+					     x	

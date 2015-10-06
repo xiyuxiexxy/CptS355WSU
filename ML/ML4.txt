@@ -1,0 +1,52 @@
+recursive types
+e.g.
+list
+type 'a list = []
+	    |   :: 'a * 'a list
+
+
+fun count []= 0
+|	count  (x::xs) =1+ count xs
+
+
+expression tree
+
+1.define constructor
+
+type binaryOp= int *int ->int
+
+datatype Exptree = Leaf of int
+|	= Binary  of ExpTree * binaryOp* ExpTree
+
+
+
+
+type already exist datatype
+datatype selfdefined
+
+Binary of is a constructor 
+Leaf of also a constructor
+
+keyword of
+
+
+
+
+
+
+val t1 =Binary (Leaf 3, op -, leaf 4)
+val t2 =Binary (Leaf 6, op *, leaf 8)
+val t1 =Binary (t1, op +, t2)
+
+op keyword convert infix operator to ordinary function
+
+2. 
+fun eval (Leaf x) = x
+|   eval (Binary (left,operator, right)) = operator (eval left,eval right)
+
+
+homework
+type 'a binaryOp = 'a *'a ->'a
+
+datatype  'a ExpTree = Leaf of 'a
+		 |     Binary of ExpTree * ('a binaryOp )*ExpTree

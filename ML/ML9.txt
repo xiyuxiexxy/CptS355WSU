@@ -1,0 +1,62 @@
+permutation [1,2,3]
+
+permutate [2,3]
+[[2,3],[3,2]]
+
+insert 1 in all possible possitions 
+
+
+perms [] =	[[]]
+| [x::xs] = (map   ? (	perms [xs]))	// map do something to every member of a list
+
+			[[],[]]
+
+problem		[[[]][[]][[]]]
+
+built in function: list.concat
+
+
+insertEveryWhere  x []= 	[[x]]
+|		x [y::ys]=	
+
+
+insertEveryWhere 1 [2,3] = 
+	suppose	if we have [1,3][3,1]
+	we need	[2,1,3] (*[1,2,3]) [2,3,1]	 
+
+
+let consy l=  y::l				<- local function,static scoping
+in
+[x::y::ys]::( map ? insertEveryWhere x ys )
+end
+
+=============================================================================
+
+tree-> string
+tts
+
+dataType Tree = LEAF of string | NODE of Tree
+
+fun tts (LEAF s) =	s
+|   tts (NODE l) = "("^ concat ( map tss l ))^ ")" => polymorphism version
+			['a','(ab)','c']
+
+ml string concat
+
+tts ( toString, tree)
+
+
+or build tree whose leaf is tree
+============================================================================
+types worksheet
+
+
+
+
+ 
+
+
+
+
+
+[x::xs] = 

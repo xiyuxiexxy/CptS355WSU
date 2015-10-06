@@ -1,0 +1,98 @@
+name scoping
+
+chapter 7
+
+which names of (variable, procedure, types ) are usable at 
+different locations of a program
+
+notion:
+scope 
+staic scope rules
+dynamic scope rules
+lifetime of variables
+referencing enviroment
+
+
+defination:
+scope of a declearation is all the location in a program
+where the name defined in that declaration can be used
+
+referencing enviroment at a location in a program is all of the declaration
+whose scope includes that location
+
+scope of some name is some subset of the program
+referening enviorment 
+
+e.g.
+
+{int x=3;
+...// scope of first x
+	{int x=5;
+	...	// scope of second x
+		{int y=x;...//scope of y
+			    // referencing enviorment for y and second x}
+	...
+	}
+...// referencing enviorment for the first x
+   // whole block is the lifetime of the first x
+}
+
+lifetime of a variable is the time from where it is declared to where it can no longer
+be accessed
+
+the second declaration of x hide (shadow) the first declartion during part of the first 
+declaration's lifetime: we call that a hole in the scope of the first declaration
+
+in ml
+
+val x= 7;
+fun f y = x+y; // scope of y: only inside function f
+
+val x=8; 
+fun e y= x+y;
+
+f 3=10	// x is 7
+e 3=11	// x is 8
+
+
+how to use x in the hole
+create a fun fx()=x in its scope
+use fx() to get its value
+
+
+fun f x y = x* y; // shadowed function f
+		  // x,y is only in this function
+		  // function parameter is kind of declaration
+
+fun fz y= x+y	// x go back to 8
+
+static scope rule :
+determine which declaration is in every referencing enviorment merely by looking 
+at the sorce code
+
+
+// every val, fun create a new block
+
+
+the declaration that a use of an identifier refers to is the one in the closest enclosed block
+
+
+Dynamic scopting:
+the declaration that an identifier refers to is the most recently made live declaration
+
+
+val y =4;
+fun g x= x+y;
+fun f x= let
+	val y=7
+    in 
+ 	g x
+    end 
+
+
+f 10 = g 10 = 10+ 4 // if static scope
+f 10 =g 10=  10+7   // if dynamic scope
+// static scope is adopt
+// expection handling use dynamic scope
+
+// let ... in ... end 

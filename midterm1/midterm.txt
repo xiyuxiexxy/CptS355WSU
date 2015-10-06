@@ -1,0 +1,65 @@
+function map
+
+(define ( map f l)
+	( cond 
+		( (null? l ) l)
+		( #t (cons (f (car l) (map f(cdr l))))
+	)
+)
+
+halting problems: chapter 2
+partial function
+
+
+6 def /f {dict...}
+1 dict 3
+1 def /z 3
+...
+
+
+
+
+
+cond
+null? l1	null
+null? l2 	null
+(#t	(cons (* (car l1) (car l2)) (pairprods (cdr l1) (cdr l2) ))
+
+
+cond 
+null? L v
+#t (prod (cdr L) (* (car L) v))
+/tail recursive 
+
+
+not tail recursive
+
+(define (prod L V)
+cond 
+null? l v
+#t (* ( car L ) (prod (cdr l) v))))
+
+
+map
+
+define (square x) ( x x)
+	map spare L
+
+
+
+6b
+" "
+
+6c
+(2,)
+
+6d
+error 
+
+6f
+4
+
+
+
+
+
